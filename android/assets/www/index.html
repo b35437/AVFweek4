@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<!-- Name: Nathan Byarley -->
+<!-- Class: AVF  -->
+<!-- Project: Week 2 -->
+<!-- Term: 1311 -->
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="personal pal organizer"/>
+    <meta name="keywords" content="organizer" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="viewport" content="user-scalable=no, width=device-width"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    
+    
+    
+
+    <!-- Title -->
+    <title>Personal Pal</title>
+</head>
+<br />
+<body>
+    <!-- Home page section -->
+    <section data-role="page" id="homepg" data-theme="a">
+        <!-- feature image with link for additem page -->
+        <br />
+        <section id="top-image">
+        <!--feature image coming soon -->
+          <img src="img/feature.png" alt="Personal Pal">
+          </section>
+        <section data-role="content">
+
+            <!-- Android Native Section -->
+            <ul data-inset="true" data-role="listview" data-divider-theme="b">
+                <li data-role="list-divider">Android Native Features</li>
+                <!-- Links -->
+                <li id="contacts"><a href="#geoPage">Geo</a></li>     
+                <li><a href="#notifyPage">Notification (Android / iOS)</a></li>
+                <li><a href="#accPage">Accelerometer</a></li>
+                <li><a href="#connPage">Connection (Android / iOS)</a></li>
+                <li><a href="#compPage">Compass</a></li>  
+                <li><a href="#browserPage">Browser (iOS)</a></li>
+            </ul>
+
+    <!-- Data API Section -->
+            <ul data-inset="true" data-role="listview" data-divider-theme="b">
+                <li data-role="list-divider">Android Native Features</li>
+                <!-- Links -->
+                <li><a href="#weatherApi">Weather API (Android / iOS)</a></li>  
+                <li><a href="#instaApi">Instagram (Android / iOS)</a></li> 
+            </ul>
+
+            <!-- Research Section -->
+            <ul data-inset="true" data-role="listview" data-divider-theme="b">
+                <li data-role="list-divider">Android Native Features</li>
+                <!-- Links -->
+                <li><a href="#weekProgress">Weekly Progress</a></li>  
+            </ul>
+          </section> <!-- End Content div -->
+        <section data-role="footer" data-position="fixed">
+            <section data-role="navbar">
+                <ul>
+                  <li><a href="#homepg">Home</a></li>
+                  <li><a href="#github">Github</a></li>
+                  <li><a href="#about">About</a></li>
+                </ul>
+            </section> 
+        </section><!-- End Footer Div -->
+    </section>
+
+
+<!--  Android Native Section  -->
+
+<!-- Geolocation Page -->
+        <section data-role="page" id="geoPage" data-theme="a">
+                <header data-role="header" data-position="fixed">
+                    <h1>GeoLocation</h1>
+                </header>
+                <section data-role="content" id="geoContent">
+                <input type="button" value="Get Current Position" id="btn-geo" data-theme="b" data-mini="true" >
+                <div id="contacts"></div>
+            </section>
+                <section data-role="footer" data-position="fixed">
+                <section data-role="navbar" dat-iconpos="top">
+                    <ul>
+                      <li><a href="#homepg">Home</a></li>
+                      <li><a href="#github">Github</a></li>
+                      <li><a href="#about">About</a></li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+<!-- End Geolocation Page -->
+
+
+<!-- Browser Page -->
+        <section data-role="page" id="browserPage" data-theme="a" data-add-back-btn="true">
+                <header data-role="header" data-position="fixed">
+                    <h1>Browser</h1>
+                </header>
+                    <section data-role="content" id="browserContent">
+                        <input type="button" value="Load Browser" id="btn-browser" data-theme="b" data-mini="true" >
+                        <section id="comphead">
+                        </section>
+                    </section>  
+                <section data-role="footer" data-position="fixed">
+                <section data-role="navbar" dat-iconpos="top">
+                    <ul>
+                      <li><a href="#homepg">Home</a></li>
+                      <li><a href="#github">Github</a></li>
+                      <li><a href="#about">About</a></li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+<!-- End Browser Page -->
+
+<!-- Compass Page -->
+        <section data-role="page" id="compPage" data-theme="a">
+            <section data-role="header" data-postition="fixed">
+                <header>
+                    <h1>Compass</h1>
+                </header>
+            </section>
+            <section data-role="content" id="compassContent">
+                <input type="button" value="Start" id="btn-compass" data-theme="b" data-mini="true" >
+                    <input type="button" value="Stop" data-theme="b" data-mini="true" >
+                <section id="heading">
+                </section>
+            </section>
+            
+            <section data-role="footer" data-position="fixed" data-id="accelerometerFoot">
+                <section data-role="navbar">
+                    <ul>
+                        <li><a href="#homepg">Home</a></li>
+                        <li><a href="#github">Github</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+<!-- End Compass Page -->
+
+<!--  Accelerometer Section  -->
+        <section data-role="page" id="accPage" data-theme="a" data-add-back-btn="true">
+            <section data-role="header" data-postition="fixed">
+                <header>
+                    <h1>Accelerometer</h1>
+                </header>
+            </section>
+            <section data-role="content" id="accContent">
+                <input type="button" value="Get Accelerometer" id="btn-accelerometer" data-theme="b" data-mini="true">
+                <section id="accOutput">Loading Divice Information....</section>
+            </section>
+            <!-- start footer -->
+            <section data-role="footer" data-position="fixed" data-id="accelerometerFoot">
+                <section data-role="navbar">
+                    <ul>
+                      <li><a href="#homepg">Home</a></li>
+                      <li><a href="#github">Github</a></li>
+                      <li><a href="#about">About</a></li>
+                    </ul>
+                </section> 
+            </section>
+            <!-- End Footer Div -->
+            
+        </section>
+<!-- End Accelerometer page -->
+
+<!-- Connection Type Page -->
+        <section data-role="page" id="connPage" data-theme="a" data-add-back-btn="true">
+            <section data-role="header" data-postition="fixed">
+                <header>
+                    <h1>Connection Type</h1>
+                </header>
+            </section>
+        
+            <section data-role="content" id="connContent">
+                <input type="button" value="Get Connection Type" id="btn-conn" data-theme="b" data-mini="true">
+                <section id="connType"></section>
+            </section>
+            
+            <!-- start footer -->
+            <section data-role="footer" data-position="fixed" data-id="connFoot">
+                <section data-role="navbar">
+                    <ul>
+                      <li><a href="#homepg">Home</a></li>
+                      <li><a href="#github">Github</a></li>
+                      <li><a href="#about">About</a></li>
+                    </ul>
+                </section> 
+            </section>
+            <!-- End Footer Div -->
+        </section>
+<!--End Connection Page -->
+
+<!--Notification Page -->
+        <section data-role="page" id="notifyPage" data-theme="a" data-add-back-btn="true">
+            <section data-role="header" data-postition="fixed">
+                <header>
+                    <h1>Notification</h1>
+                </header>
+            </section>
+        
+            <section data-role="content" id="notifyContent">
+                <input type="button" value="Get Notificaltion" id="" onclick="alertNotification(); return false;" data-theme="b" data-mini="true">
+                <section id="notify"></section>
+            </section>
+            
+            <!-- start footer -->
+            <section data-role="footer" data-position="fixed" data-id="notifyFoot">
+                <section data-role="navbar">
+                    <ul>
+                      <li><a href="#homepg">Home</a></li>
+                      <li><a href="#github">Github</a></li>
+                      <li><a href="#about">About</a></li>
+                    </ul>
+                </section> 
+            </section>
+            <!-- End Footer Div -->
+
+        </section>
+<!--End Notification Page -->
+
+
+
+<!-- Data API Page Section  -->
+
+
+    <!--  weather API Section  -->
+        <section data-role="page" id="weatherApi" data-theme="a">
+            <section data-role="header" data-postition="fixed">
+                <header>
+                    <h1>Weather API</h1>
+                </header>
+            </section>
+            
+            <section data-role="content">
+                <ul data-role="listview" data-inset="true" data-divider-theme="b">
+                    <li data-role="list-divider" id="weatherInfo"></li>
+                </ul>
+            </section>
+            <!-- start footer -->
+            <section data-role="footer" data-position="fixed" data-id="weatherFoot">
+                <section data-role="navbar">
+                    <ul>
+                      <li><a href="#homepg">Home</a></li>
+                      <li><a href="#github">Github</a></li>
+                      <li><a href="#about">About</a></li>
+                    </ul>
+                </section> 
+            </section><!-- End Footer Div -->      
+        </section><!-- End weather API page -->
+
+
+<!--  Instagram API Section  -->
+        <section data-role="page" id="instaApi" data-theme="a">
+            <section data-role="header" data-postition="fixed">
+                <header>
+                    <h1>Instagram API</h1>
+                </header>
+            </section>
+            
+            <section data-role="content" id="instaContent">
+                <form action="" id="instaForm">
+                    <fieldset id="instaField">
+                        <section data-role="fieldcontainer">  
+                            <input type="search" name="tag" id="search" value="" data-mini="true" data-clear-btn="true" placeholder="Search Instagram....">
+                        </section>
+                    </fieldset> 
+                    <section>
+                        <input type="button" value="Search" id="searchbtn" data-theme="a" data-mini="true">
+                    </section>
+                </form>
+                
+                <!-- Results will be listed here and design create with CSS -->
+                <section id="results">
+                    <ul id="data-output">
+                    </ul>
+                </section>
+            </section>
+            <!-- start footer -->
+            <section data-role="footer" data-position="fixed" data-id="instaFoot">
+                <section data-role="navbar">
+                    <ul>
+                      <li><a href="#homepg">Home</a></li>
+                      <li><a href="#github">Github</a></li>
+                      <li><a href="#about">About</a></li>
+                    </ul>
+                </section> 
+            </section><!-- End Footer Div --> 
+        </section><!-- End Instagram API page -->
+
+
+<!--  Research Page Section -->
+
+    <!--  Start Weekly Progress Page  -->
+    <section data-role="page" id="weekProgress" data-theme="a">
+        <section data-role="header" data-position="fixed">
+        <br />
+            <a href="#" data-rel="back" data-icon="back">Back</a>
+            
+            <h1>Weekly Progress</h1>
+        </section> <!-- End Header section -->
+            <br />
+        <section data-role="content">
+            <br />
+            <br />
+            <section data-role="navbar">
+                <ul>
+                    <li><a href="#" data-href="w1">Week 1</a></li>
+                    <li><a href="#" data-href="w2">Week 2</a></li>
+                    <li><a href="#" data-href="w3">Week 3</a></li>
+                    <li><a href="#" data-href="w4">Week 4</a></li>
+                </ul>
+            </section><!-- /navbar -->
+      <br />
+
+        <section id="w1" class="content_div">
+            <ul>
+              <oi>Week 1 Changes</oi>
+            </ul>
+        </section>
+        <section id="w2" class="content_div">
+            <ul>
+                <oi><p><b>1.   Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</b><br/>
+                        With the ability of ‘live’ data resources twitter like a few other social networks like Facebook allow you to access other sites using your credentials from twitter
+                        </p>
+                        <p><b>2.   Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?</b><br/>
+                        JSON-P allows for the user to access data from an external website as in the use with API’s
+                        </p>
+                        <p><b>3.   Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</b><br/>
+                        A few I could think of would be the GPS, calendar. But the biggest one of the 2 would be the GPS a lot of the apps developed today ask you to turn GPS feature on for marking your location. Not to mention for travels or even pin pointing somewhere of interest you may be looking for.
+                        </p>
+                        <p><b>4.   Please describe any design and functionality intentions you may have for your Demo app components this month.<b><br/>
+                        I enjoy what I have learned thus far, and for my application I like the whole twitter implementation and not 100% sure as to what other API I am wanting to use, there are so many that would fit perfect into my application.
+                        </p>
+                        <p><b>5.   Briefly describe some past 'lessons learned' regarding workflow as it relates to research, design, development, etc.<b><br/>
+                        Verification and error checking are two that are lessons learned back when I first started programming, another would be time management as I still learn from that working full time, school full time, and an any other duties that require me to work late.
+                        </p>
+                    </oi>
+            </ul>  
+        </section>
+        <section id="w3" class="content_div">
+            <ul>
+                <oi>Week 3 Changes</oi>
+            </ul>
+        </section>
+        <section id="w4" class="content_div">
+            <ul>
+                <oi>Week 4 Changes</oi>
+            </ul>
+        </section>
+        </section>
+        <section data-role="footer" data-position="fixed">
+            <section data-role="navbar">
+                <ul>
+                  <li><a href="#homepg">Home</a></li>
+                  <li><a href="#github">Github</a></li>
+                  <li><a href="#about">About</a></li>
+                </ul>
+            </section> 
+        </section><!-- End Footer Div -->
+    </section> <!-- End Weekly Progress page -->
+
+
+    <!-- Start About Page -->
+    <section data-role="page" id="about" data-theme="a">
+        <section data-role="header" data-position="fixed">
+            <a href="#" data-rel="back" data-icon="back">Back</a>
+            <br />
+            <h1>About</h1>
+        </section> <!-- End Header section -->
+            <br />
+        <section data-role="content">
+            <br />
+            <br />
+            <section data-role="navbar">
+                <ul>
+                    <li><a href="#" data-href="a">Who am I?</a></li>
+                    <li><a href="#" data-href="b">Application</a></li>
+                </ul>
+            </section><!-- /navbar -->
+      <br />
+
+        <section id="a" class="content_div">
+            <ul>
+              <oi>My Name is Nathan Byarley, i have been doing web design, graphic design and programing (C#, some C/C++, HTML, ASP, SQL) just to name a few for around 10 years if not longer, I originaly started my interest in computers back in 1988 and my first computer was a little 386 machine solid case with green screen and keyboard combined, only running dos the first programming language i started playing with was turbo pascal.</oi>
+            </ul>
+        </section>
+        <section id="b" class="content_div">
+            <ul>
+                <oi> This application allows one touch access to many usefull applications and programs to assist in day to day activities.</oi>
+            </ul> 
+        </section>
+        </section>
+        <section data-role="footer" data-position="fixed">
+            <section data-role="navbar">
+                <ul>
+                  <li><a href="#homepg">Home</a></li>
+                  <li><a href="#github">Github</a></li>
+                  <li><a href="#about">About</a></li>
+                </ul>
+            </section> 
+        </section><!-- End Footer Div -->
+    </section> <!-- End About page -->
+
+        <!--   Github Page -->
+    <section data-role="page" id="github" data-theme="a">
+        <section data-role="header" data-position="fixed">
+          <a href="#" data-rel="back" data-icon="back">Back</a>
+            <h1>Equipment List</h1>
+        </section>
+        <section data-role="content">
+            <h3>Weekly Github Repo</h3>
+                <ul data-inset="true" data-role="listview" id="link-pos" data-theme="a">
+                    <section data-role="collapsible" data-collapsed="true">
+                        <h3>Week 1</h3>
+                        <p>Repos</p>
+                    </section>
+                    <section data-role="collapsible" data-collapsed="true">
+                        <h3>Week 2</h3>
+                        <p>Repos</p>
+                    </section>
+                    <section data-role="collapsible" data-collapsed="true">
+                        <h3>Week 3</h3>
+                        <p>Repos</p>
+                    </section>
+                    <section data-role="collapsible" data-collapsed="true">
+                        <h3>Week 4</h3>
+                        <p>Repos</p>
+                    </section>
+                </ul>
+        </section>
+        <section data-role="footer" data-position="fixed">
+            <section data-role="navbar">
+                <ul>
+                    <li><a href="#homepg">Home</a></li>
+                    <li><a href="#github">Github</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </section> 
+        </section><!-- End Footer section -->
+    </section> <!-- end github section -->
+
+</body>
+    <!-- JavaScript -->
+    <script src="js/jquery-2.0.3.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+    <script src="jquery-migrate.js" type="text/javascript"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+    
+
+    
+    
+
+</html>

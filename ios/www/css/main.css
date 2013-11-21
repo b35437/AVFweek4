@@ -1,0 +1,53 @@
+/*
+Name: Nathan Byarley
+Project: Week 2
+Term: 1311
+Class: AVF
+*/
+
+
+
+#top-image {
+    text-align: center;
+}
+
+#w1, #w2, #w3, #w4, #a, #b {
+    display: none;
+}
+
+@media (orientation:landscape){
+    .applelandscape{
+        width:30%
+        float:right;
+
+    }
+}
+
+@media only screen and (orientation:portrait){
+
+       .applelportrait{
+            width:100%;
+            float:center;
+    }
+}
+
+
+h1{
+	text-align: center;
+	padding: 5px;
+	margin: 0px;
+	font-size: 18px;
+}
+
+ul#data-output img{
+	width: 100%;
+}
+
+ul#data-output li{
+	text-align: center;
+	list-style: none;
+	display: inline-block;
+	padding: 5px;
+	margin: 5px;
+	width: 30%;
+}
